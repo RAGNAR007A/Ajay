@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGMI Tournament Details</title>
+    <link rel="stylesheet" href="details.css">
+    <script>
+        // Function to toggle visibility of the content when sub-buttons are clicked
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Esports India Cup</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#details">Details</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div style="background-image: url('images/bgmi.jpg'); background-size: cover; background-position: center; height: 300px; width: 100%;"></div>
+        </section>
+
+        <!-- Tournament Details Section -->
+        <section id="details" class="details">
+            <h2>BGMI Tournament Details</h2>
+            
+            <!-- Sub Buttons for Content -->
+            <button onclick="toggleContent('entryFee')">Entry Fee</button>
+            <div id="entryFee" style="display: none;">
+                <p><strong>Entry Fee:</strong> Rs. 500</p>
+            </div>
+
+            <button onclick="toggleContent('rules')">Rules & Regulations</button>
+            <div id="rules" style="display: none;">
+                <p>Follow fair play, no cheating, and comply with tournament guidelines.</p>
+            </div>
+
+            <button onclick="toggleContent('terms')">Terms & Conditions</button>
+            <div id="terms" style="display: none;">
+                <p>Entry fee is non-refundable. Players must adhere to the organizer's decisions.</p>
+            </div>
+
+            <button onclick="toggleContent('prizePool')">Prize Pool Details</button>
+            <div id="prizePool" style="display: none;">
+                <p>Total Prize Pool: Rs. 1,00,000</p>
+                <p>1st: Rs. 50,000</p>
+                <p>2nd: Rs. 30,000</p>
+                <p>3rd: Rs. 20,000</p>
+            </div>
+        </section>
+
+        <!-- Register Now Button -->
+        <section class="pay-now">
+            <a href="payment.html">
+                <button class="pay-now-btn">Register Now</button>
+            </a>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <p>Email: bgmi@esportsindiacup.com</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Esports India Cup. All rights reserved.</p>
+    </footer>
+</body>
+</html>
