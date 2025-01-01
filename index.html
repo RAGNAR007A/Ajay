@@ -5,21 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esports India Cup</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        // Function to toggle the navigation menu visibility
+        function toggleMenu() {
+            const navLinks = document.getElementById("navLinks");
+            if (navLinks.style.display === "block") {
+                navLinks.style.display = "none";
+            } else {
+                navLinks.style.display = "block";
+            }
+        }
+    </script>
 </head>
 <body>
     <header class="header">
-        <div class="logo">Esports India Cup</div>
-        <nav>
-            <ul class="nav-links">
+        <div class="logo">
+            <img src="images/EIC.jpg" alt="Esports India Cup Logo" style="height: 430px;">
+            <span>Esports India Cup </span>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            &#9776; <!-- Hamburger Icon -->
+        </div>
+        <nav class="nav-links" id="navLinks">
+            <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#tournaments">Tournaments</a></li>
+                <li><a href="#tournaments">Rules</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <section id="hero" class="hero">
-            <h1>Welcome to the Esports India Cup</h1>
+            <h1>Welcome to Esports India Cup</h1>
             <p>The ultimate competition for gamers nationwide.</p>
         </section>
         <section id="games" class="games">
@@ -32,29 +50,57 @@
                     <button class="game-btn" style="background-image: url('images/freefire.jpg');"></button>
                 </a>
                 <a href="comingsoon.html">
-                    <button class="game-btn" style="background-image: url('images/comingsoon.jpg');"></button>
+                    <button class="game-btn" style="background-image: url('images/league\ of\ legends.jpg');"></button>
                 </a>
                 <a href="comingsoon.html">
-                    <button class="game-btn" style="background-image: url('images/comingsoon.jpg');"></button>
+                    <button class="game-btn" style="background-image: url('images/Dota2.jpg');"></button>
                 </a>
             </div>
-            
         </section>
-        <section id="about" class="about">
+        <section id="about" class="about" style="text-align: center; padding: 20px;">
             <h2>About Us</h2>
-            <p>The Esports India Cup brings together the best teams and players from across the country to compete for glory.</p>
+            <img src="images/EIC.jpg" alt="Esports India Cup Logo" style="height: 200px; display: block; margin: 0 auto;">
+            <p style="margin-top: 20px; font-size: 1.1em; line-height: 1.6; text-align: justify;">
+                Welcome to <strong>eSports India Cup (EIC)</strong>, the ultimate platform for competitive gaming in India! 
+                We bring together gamers from across the country to participate in thrilling online tournaments featuring 
+                popular titles like <strong>BGMI</strong>, <strong>Free Fire</strong>, and more. Whether you are a seasoned professional 
+                or a passionate enthusiast, our tournaments offer an opportunity to showcase your skills, 
+                compete for glory, and connect with a vibrant gaming community.
+            </p>
+            <p style="margin-top: 10px; font-size: 1.1em; line-height: 1.6; text-align: justify;">
+                Join us as we continue to build and celebrate India's growing <strong>eSports legacy</strong>. Unleash the 
+                champion within you and be part of an exciting journey where gaming meets greatness. 
+                Together, let’s redefine the world of competitive gaming in India!
+            </p>
         </section>
+                
         <section id="tournaments" class="tournaments">
-            <h2>Upcoming Tournaments</h2>
+            <h2>Rules</h2>
             <ul>
-                <li>League of Legends Championship</li>
-                <li>Dota 2</li>
-                <li>Dates will be announced soon</li>
+                    <li> Gameplay Recording: All participants are required to record their gameplay throughout the tournament. Failure to provide footage may result in disqualification.
+
+                    <li> Fair Play: No use of cheats, hacks, or any third-party software that gives unfair advantages. Participants caught violating this rule will be permanently banned from the website and all future tournaments.
+                    
+                    <li> Behavior: Respectful and sportsmanlike behavior is expected at all times. Abusive language, trolling, or harassment will not be tolerated. Any violation may result in disqualification or a ban.
+                    
+                    <li> Team Composition: Ensure your team has the required number of players as per the tournament format. Substitutes are not allowed after the tournament has started unless otherwise specified.
+                    
+                    <li> Match Results: All match results must be submitted on time as instructed by the tournament organizers. Any discrepancies will be reviewed, and a decision will be made accordingly.
+                    
+                    <li> Server Selection: Players must join the designated servers provided by the organizers. No server hopping is allowed unless explicitly stated.
+                    
+                    <li> Equipment and Internet: Players are responsible for their equipment, including a stable internet connection. Lag or connectivity issues are not grounds for a re-match unless both teams agree.
+                    
+                    <li> Cheating Reports: If you believe another player is cheating or violating the rules, report it to the admins with relevant evidence (gameplay recording, screenshots, etc.). Reports without evidence may not be considered.
+                    
+                    <li> Eligibility: Participants must be 13 years or older to compete in our tournaments. Players must adhere to all local gaming laws.
+                    
+                    <li> Prize Distribution: Prizes will be awarded as per the tournament rules. No prize transfers will be allowed.</li>
             </ul>
         </section>
         <section id="contact" class="contact">
             <h2>Contact Us</h2>
-            <p>Email: contact@esportsindiacup.com</p>
+            <p>Email: esportsindiacup@gmail.com</p>
         </section>
     </main>
     <footer class="footer">
@@ -62,4 +108,3 @@
     </footer>
 </body>
 </html>
-
