@@ -1,0 +1,187 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Basic Typography */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background for contrast */
+    color: white; /* Adjust text color for visibility */
+    line-height: 1.6;
+    padding: 0;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333333; /* Slightly lighter for contrast */
+    padding: 10px 20px;
+    color: white;
+    position: relative;
+    z-index: 100;
+}
+
+/* Logo */
+.header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.header .logo img {
+    max-height: 40px;
+}
+
+.header .logo span {
+    font-size: 20px; /* Larger font for better visibility */
+    font-weight: bold;
+    color: white; /* Accent color */
+    animation: fadeInUp 1.5s ease-out;
+}
+
+/* Navigation Links */
+.nav-links ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    animation: fadeInRight 1s ease-out;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #f3392c; /* Hover effect with accent color */
+    transform: scale(0.5);
+}
+
+/* Button Style for Apply Now */
+.jobs p strong {
+    color: rgb(253, 253, 253);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.jobs p strong:hover {
+    background-color: #f3392c; /* Hover effect with accent color */
+}
+
+/* Main Section Styles */
+main {
+    padding: 40px;
+}
+
+.jobs h2 {
+    font-size: 2.5em; /* Adjust font size */
+    margin-bottom: 20px;
+    color: white; /* Adjust to match text color */
+    text-align: center;
+}
+
+.jobs p {
+    font-size: 1.1em;
+    color: #ccc;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.jobs ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.jobs li {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.jobs strong {
+    color: white; /* White for contrast */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    animation: fadeInUp 2s ease-out;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header .logo {
+        margin-bottom: 10px;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .jobs h2 {
+        font-size: 2em;
+    }
+
+    .jobs p {
+        font-size: 1.2em;
+    }
+
+    .jobs ul li {
+        font-size: 1.1em;
+    }
+}
