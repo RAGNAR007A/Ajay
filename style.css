@@ -1,93 +1,159 @@
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #121212; /* Dark background for contrast */
 }
 
+/* Header */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #111;
-    color: white;
+    background-color: #333333; /* Slightly lighter for contrast */
+    color: #fff;
+    position: relative;
+    z-index: 100;
 }
 
-.nav-links {
-    list-style-type: none;
+/* Logo */
+.logo {
     display: flex;
-    gap: 15px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-}
-
-.hero {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.about, .tournaments, .contact {
-    padding: 20px;
-    text-align: center;
-}
-
-.footer {
-    background-color: #111;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-}
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #111;
-    color: white;
+    gap: 10px;
+    animation: fadeInUp 1s ease-out;
 }
 
+.logo img {
+    max-height: 40px; /* Adjust logo size */
+}
+
+.logo span {
+    font-size: 20px; /* Larger font for better visibility */
+    font-weight: bold;
+    color: white; /* Accent color */
+    animation: fadeInUp 1.5s ease-out;
+}
+
+/* Navigation Links */
 .nav-links {
     list-style-type: none;
     display: flex;
-    gap: 15px;
+    gap: 20px;
+    animation: fadeInRight 1s ease-out;
 }
 
 .nav-links a {
-    color: white;
+    color: #fff;
     text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
+.nav-links a:hover {
+    background-color: #f3392c; /* Hover effect with accent color */
+    transform: scale(0.5);
+}
+
+/* Toggle Menu */
+.menu-toggle {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    z-index: 200;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.2);
+    color: #e74c3c;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show hamburger icon */
+    }
+
+    .nav-links {
+        display: none; /* Initially hidden */
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #333;
+        border-radius: 5px;
+        padding: 20px;
+        flex-direction: column;
+        animation: slideInRight 0.5s ease-out;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+        margin: 10px 0;
+        padding: 10px 20px;
+    }
+}
+
+/* Toggle menu animation */
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* Popular Games Section */
+.games h2 {
+    font-size: 2.5em; /* Adjust font size */
+    text-align: center; /* Center the text */
+    color: white; /* Text color */
+    margin-bottom: 30px; /* Optional margin for spacing */
+}
+
+/* Hero Section */
 .hero {
-    background-color: #222;
+    background-color: black;
     color: white;
     text-align: center;
     padding: 50px 20px;
+    animation: fadeInUp 1s ease-out;
 }
 
-.games {
-    text-align: center;
-    padding: 20px;
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: fadeInUp 1.5s ease-out;
 }
 
+.hero p {
+    font-size: 1.2em;
+    animation: fadeInUp 2s ease-out;
+}
+
+/* Game Buttons Section */
 .game-buttons {
-    display: flex;
+    display: flex;  
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+    animation: fadeInUp 2s ease-out;
 }
 
 .game-btn {
@@ -99,22 +165,124 @@ body {
     border-radius: 20px;
     cursor: pointer;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .game-btn:hover {
     transform: scale(1.1);
-    transition: transform 0.2s;
+    box-shadow: 0px 8px 12px rgba(255, 2, 2, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-.about, .tournaments, .contact {
+/* About Section */
+.about {
     padding: 30px;
     text-align: left;
+    background-color: #15181a; /* Change background to dark blue */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    color: #ecf0f1; /* Light text color for contrast */
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease-out;
 }
 
+.about h2 {
+    font-size: 2.5em;
+    color: #ffffff; /* Red for heading */
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #ccc; /* Light color for paragraph */
+}
+
+/* Rules Section */
+.tournaments {
+    padding: 30px;
+    text-align: center;
+    background-color: #1a1a1a; /* Dark background for rules */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    color: #ecf0f1; /* Light text for readability */
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the heading */
+}
+
+/* Rules heading */
+.tournaments h2 {
+    font-size: 2.5em;
+    color: #ffffff; /* Red for heading */
+    margin-bottom: 20px;
+    text-align: center; /* Ensures the heading is centered */
+}
+
+/* Rules content (text on the left side) */
+.tournaments ul {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #ccc;
+    text-align: left; /* Align the list items to the left */
+    width: 100%; /* Ensure the list takes full width */
+    max-width: 900px; /* Limit the width to prevent stretching */
+    margin: 0 auto; /* Center the content */
+    padding-left: 20px; /* Add some padding on the left for better readability */
+}
+
+/* Optional: Customize the individual list items for better spacing */
+.tournaments li {
+    margin-bottom: 10px; /* Add space between each item */
+}
+
+
+/* Contact Section */
+.contact {
+    padding: 30px;
+    text-align: center;
+    background-color: #232425; /* Slightly lighter dark color */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    color: #ecf0f1; /* Light text color */
+    animation: fadeInUp 1s ease-out;
+}
+
+.contact h2 {
+    font-size: 2.5em;
+    color: #faf8f8; /* Red for heading */
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #ccc;
+}
+
+/* Footer */
 .footer {
     background-color: #111;
-    font-family: Arial, Helvetica, sans-serif;
     color: white;
     text-align: center;
     padding: 10px 0;
+    animation: fadeInUp 2s ease-out;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
