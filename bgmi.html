@@ -38,8 +38,34 @@
         <!-- Tournament Details Section -->
         <section id="details" class="details">
             <h2>BGMI Tournament Details</h2>
-            <h3>Start: February-10-2025</h3>
-            
+            <h3>Tournament Starts: 20-02-2025</h3>
+            <div class="countdown">
+                <div id="timer">Loading...</div>
+            </div>
+        
+            <script>
+                function updateCountdown() {
+                    const targetDate = new Date("2025-02-20T00:00:00");
+                    const now = new Date();
+                    const timeDiff = targetDate - now;
+        
+                    if (timeDiff > 0) {
+                        const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+                        const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+                        const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+        
+                        document.getElementById("timer").textContent = 
+                            `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                    } else {
+                        document.getElementById("timer").textContent = "The countdown has ended!";
+                        clearInterval(interval);
+                    }
+                }
+        
+                const interval = setInterval(updateCountdown, 1000);
+                updateCountdown();
+            </script>            
             <!-- Sub Buttons for Content -->
             <button onclick="toggleContent('entryFee')">Entry Fee</button>
             <div id="entryFee" style="display: none;">
