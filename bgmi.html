@@ -38,14 +38,14 @@
         <!-- Tournament Details Section -->
         <section id="details" class="details">
             <h2>BGMI Tournament Details</h2>
-            <h3>Tournament Starts: 20-01-2025</h3>
+            <h3>Tournament Starts: 20-02-2025</h3>
             <div class="countdown">
                 <div id="timer">Loading...</div>
             </div>
         
             <script>
                 function updateCountdown() {
-                    const targetDate = new Date("2025-01-20T00:00:00");
+                    const targetDate = new Date("2025-02-20T00:00:00");
                     const now = new Date();
                     const timeDiff = targetDate - now;
         
@@ -69,7 +69,7 @@
             <!-- Sub Buttons for Content -->
             <button onclick="toggleContent('entryFee')">Entry Fee</button>
             <div id="entryFee" style="display: none;">
-                <p><strong>Entry Fee:</strong> Rs. 50</p>
+                <p><strong>Entry Fee:</strong> Free</p>
             </div>
 
             <button onclick="toggleContent('rules')">Rules & Regulations</button>
@@ -162,9 +162,9 @@
             <!-- Prize Pool Section -->
             <button onclick="toggleContent('prizePool')">Prize Pool Details</button>
             <div id="prizePool" style="display: none;">
-                <p><strong>1st: Rs.2,000</p>
-                <p>2nd: Rs. 1,000</p>
-                <p>3rd: Rs. 500</p>
+                <p><strong>1st: Rs.50,000</p>
+                <p>2nd: Rs. 30,000</p>
+                <p>3rd: Rs. 20,000</p>
             </div>
         </section>
 
@@ -175,39 +175,6 @@
         Register Now
     </button>
 </section>
-
-<script>
-// Define your payment URLs
-const paymentUrls = [
-    "upi://pay?pa=sanamajay4-1@oksbi&pn=Ajay%20Sanam&am=50.00&cu=INR&aid=uGICAgID16_LreQ",
-    "upi://pay?pa=sanamajay4-2@okicici&pn=Ajay%20Sanam&am=50.00&cu=INR&aid=uGICAgID16_LreQ",
-    "upi://pay?pa=sanamajay4-1@okaxis&pn=Ajay%20Sanam&am=50.00&cu=INR&aid=uGICAgID16_LreQ",
-    "upi://pay?pa=sanamajay4-2@okhdfcbank&pn=Ajay%20Sanam&am=50.00&cu=INR&aid=uGICAgID16_LreQ"
-];
-    ];
-
-// Initialize counters
-let clickCount = 0;
-let currentUrlIndex = 0;
-
-// Get the button element
-const payNowButton = document.getElementById("payNowButton");
-
-// Add click event listener
-payNowButton.addEventListener("click", () => {
-    clickCount++; // Increment the click counter
-
-    // Change the URL after every 15 clicks
-    if (clickCount % 15 === 0) {
-        currentUrlIndex = (currentUrlIndex + 1) % paymentUrls.length; // Cycle through URLs
-    }
-
-    // Open the current payment URL in a new tab
-    window.open(paymentUrls[currentUrlIndex], "_blank");
-});
-</script>
-        <p>please submit your bgmi details below after payment</p>
- 
 
          <!-- Confirmation Button -->
 <section class="confirmation">
