@@ -180,11 +180,10 @@
 <script>
 // Define your payment URLs
 const paymentUrls = [
-    "upi://pay?pa=sanamajay4-1@oksbi&pn=Ajay%20Sanam&am=500.00&cu=INR&aid=uGICAgID16_LreQ",
-    "upi://pay?pa=sanamajay4-2@okicici&pn=Ajay%20Sanam&am=500.00&cu=INR&aid=uGICAgID16_LreQ",
-    "upi://pay?pa=sanamajay4-1@okaxis&pn=Ajay%20Sanam&am=500.00&cu=INR&aid=uGICAgID16_LreQ",
-    "upi://pay?pa=sanamajay4-2@okhdfcbank&pn=Ajay%20Sanam&am=500.00&cu=INR&aid=uGICAgID16_LreQ"
-];
+    "upi://pay?pa=esportsindiacup@oksbi&pn=Esports%20India%20cup&am=500.00&cu=INR&aid=uGICAgKD2xsD7eg",
+    "upi://pay?pa=esportsindiacup@okhdfcbank&pn=Esports%20India%20cup&am=500.00&cu=INR&aid=uGICAgKD2xsD7eg",
+    "upi://pay?pa=esportsindiacup@okicici&pn=Esports%20India%20cup&am=500.00&cu=INR&aid=uGICAgKD2xsD7eg",
+    ];
 
 // Initialize counters
 let clickCount = 0;
@@ -206,12 +205,13 @@ payNowButton.addEventListener("click", () => {
     window.open(paymentUrls[currentUrlIndex], "_blank");
 });
 </script>
+        <p>please submit your bgmi details below after payment</p>
  
 
          <!-- Confirmation Button -->
 <section class="confirmation">
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmMj01ROF3CnBKtVBNrkURzQmItYpRGPK39OuYau6GPxThzg/viewform?usp=dialog" target="_blank" style="text-decoration: none;">
-        <button class="confirmation-btn" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Confirm</button>
+        <button class="confirmation-btn" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Submit BGMI Details</button>
     </a>
 </section>
 
