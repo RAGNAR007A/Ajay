@@ -3,108 +3,390 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esports India Cup</title>
+    <title>Lokalitha Fashions</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        // Function to toggle the navigation menu visibility
-        function toggleMenu() {
-            const navLinks = document.getElementById("navLinks");
-            if (navLinks.style.display === "block") {
-                navLinks.style.display = "none";
-            } else {
-                navLinks.style.display = "block";
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Basic styling for navigation */
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .nav-links ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* Styling for the search bar */
+        .search-bar {
+            padding: 5px 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: block; /* Always show search bar on desktop */
+        }
+
+        /* Show search bar only on mobile */
+        @media (max-width: 768px) {
+            .nav-links ul {
+                display: none; /* Hide menu items on mobile */
+            }
+
+            .menu-toggle {
+                display: block; /* Show hamburger menu on mobile */
+                cursor: pointer;
+            }
+
+            .search-icon {
+                display: block; /* Show search icon on mobile */
+                cursor: pointer;
+                font-size: 20px;
+                color: #fff;
+                background-color: transparent;
+            }
+
+            .search-bar {
+                display: none; /* Search bar hidden by default on mobile */
+            }
+
+            .search-bar.active {
+                display: block; /* Show search bar when active on mobile */
             }
         }
-    </script>
+
+        /* Toggle search bar visibility */
+        @media (min-width: 769px) {
+            .search-icon {
+                display: none; /* Hide search icon on desktop */
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="header">
         <div class="logo">
-            <img src="images/EIC.jpg" alt="Esports India Cup Logo" style="height: 430px;">
-            <span>Esports India Cup </span>
+            <img src="assets/images/EIC.jpg" alt="Lokalitha" style="height: 40px;">
+            <span>Lokalitha Fashions</span>
         </div>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            &#9776; <!-- Hamburger Icon -->
-        </div>
-        <nav class="nav-links" id="navLinks">
+        <div class="menu-toggle" onclick="toggleNav()">&#9776;</div> <!-- Hamburger menu -->
+        <nav class="nav-links">
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#tournaments">Rules</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="comingsoon.html">Jobs</a></li>
+                <li><a href="#men">Men</a></li>
+                <li><a href="#women">Women</a></li>
+                <li><a href="#buy1get1">Buy1+Get1</a></li>
+                <li><a href="#buy2get1">Buy2+Get1</a></li>
+                <li><a href="#buy2get2">Buy2+Get2</a></li>
             </ul>
+            <!-- Search Bar for Desktop -->
+            <input type="text" class="search-bar" placeholder="Search..." />
+            <!-- Search Icon for Mobile (Font Awesome) -->
+            <div class="search-icon" onclick="toggleSearch()">
+                <i class="fas fa-search"></i> <!-- Font Awesome Search Icon -->
+            </div>
         </nav>
     </header>
+    
     <main>
         <section id="hero" class="hero">
-            <h1>Welcome to Esports India Cup</h1>
-            <p>The ultimate competition for gamers nationwide.</p>
+            <p>Experience Fashions like never before</p>
+            <h1>Unleash Your Style: Where Fashion Meets Expression</h1>
+            <p>Fashion is not just about clothing; it's about expressing who you are without saying a word</p>
         </section>
         <section id="games" class="games">
-            <h2>Popular Games</h2>
+            <h2>Our best offers</h2>
             <div class="game-buttons">
-                <a href="bgmi.html">
-                    <button class="game-btn" style="background-image: url('images/bgmi.jpg');"></button>
+                <a href="comingsoon.html">
+                    <button class="game-btn" style="background-image: url('assets/images/women.png');"></button>
+                </a> 
+                <a href="comingsoon.html">
+                    <button class="game-btn" style="background-image: url('assets/images/tshirt.jpg');"></button>
                 </a>
                 <a href="comingsoon.html">
-                    <button class="game-btn" style="background-image: url('images/freefire.jpg');"></button>
+                    <button class="game-btn" style="background-image: url('assets/images/woman3.jpg');"></button>
                 </a>
                 <a href="comingsoon.html">
-                    <button class="game-btn" style="background-image: url('images/league\ of\ legends.jpg');"></button>
+                    <button class="game-btn" style="background-image: url('assets/images/women2.jpg');"></button>
+                </a>
+                <!-- New buttons -->
+                <a href="comingsoon.html">
+                    <button class="game-btn" style="background-image: url('assets/images/t.jpg');"></button>
                 </a>
                 <a href="comingsoon.html">
-                    <button class="game-btn" style="background-image: url('images/Dota2.jpg');"></button>
+                    <button class="game-btn" style="background-image: url('assets/images/tshirt5.jpg');"></button>
+                </a>
+            </div>            
+        </section>
+        <section id="circle-images" style="text-align: center; padding: 40px;">
+            <h2>Our Featured Collection</h2>
+            <div class="circle-container">
+                <img src="assets/images/t.jpg" alt="BGMI Image 1" class="circle img1">
+                <img src="assets/images/tshirt.jpg" alt="BGMI Image 2" class="circle img2">
+                <img src="assets/images/tshirt2.jpg" alt="BGMI Image 3" class="circle img3">
+                <img src="assets/images/tshirt3.jpg" alt="BGMI Image 4" class="circle img4">
+                <img src="assets/images/tshirt4.jpg" alt="BGMI Image 5" class="circle img5">
+                <img src="assets/images/tshirt5.jpg" alt="BGMI Image 6" class="circle img6">
+                <img src="assets/images/women.png" alt="BGMI Image 7" class="circle img7">
+                <img src="assets/images/men.jpg" alt="BGMI Image 8" class="circle img8">
+            </div>
+        </section>
+        <section id="flower" class="flower">
+            <div class="flower-buttons">
+                <a href="comingsoon.html">
+                    <button class="flower-btn" style="background-image: url('assets/images/t.jpg');"></button>
+                </a>
+                <a href="comingsoon.html">
+                    <button class="flower-btn" style="background-image: url('assets/images/tshirt.jpg');"></button>
+                </a>
+                <a href="comingsoon.html">
+                    <button class="flower-btn" style="background-image: url('assets/images/tshirt2.jpg');"></button>
+                </a>
+                <a href="comingsoon.html">
+                    <button class="flower-btn" style="background-image: url('assets/images/tshirt5.jpg');"></button>
+                </a>
+                <!-- New buttons -->
+                <a href="comingsoon.html">
+                    <button class="flower-btn" style="background-image: url('assets/images/women.png');"></button>
+                </a>
+                <a href="comingsoon.html">
+                    <button class="flower-btn" style="background-image: url('assets/images/women1.jpg');"></button>
+                </a>
+            </div>            
+        </section>    
+        <section id="category" class="category" style="text-align: center; padding: 40px;">
+            <h2>Product-Based Categories</h2>
+            <div class="category-buttons">
+                <a href="comingsoon.html">
+                    <button class="category-btn" style="background-image: url('assets/images/t.jpg');"></button>
+                </a>
+                <a href="comingsoon.html">
+                    <button class="category-btn" style="background-image: url('assets/images/tshirt.jpg');"></button>
+                </a>
+                <a href="comingsoon.html">
+                    <button class="category-btn" style="background-image: url('assets/images/tshirt2.jpg');"></button>
+                </a>
+                <a href="comingsoon.html">
+                    <button class="category-btn" style="background-image: url('assets/images/tshirt5.jpg');"></button>
+                </a>
+                <!-- New buttons -->
+                <a href="comingsoon.html">
+                    <button class="category-btn" style="background-image: url('assets/images/women.png');"></button>
+                </a>
+                <a href="comingsoon.html">
+                    <button class="category-btn" style="background-image: url('assets/images/women1.jpg');"></button>
                 </a>
             </div>
         </section>
-        <section id="about" class="about" style="text-align: center; padding: 20px;">
-            <h2>About Us</h2>
-            <img src="images/EIC.jpg" alt="Esports India Cup Logo" style="height: 200px; display: block; margin: 0 auto;">
-            <p style="margin-top: 20px; font-size: 1.1em; line-height: 1.6; text-align: justify;">
-                Welcome to <strong>eSports India Cup (EIC)</strong>, the ultimate platform for competitive gaming in India! 
-                We bring together gamers from across the country to participate in thrilling online tournaments featuring 
-                popular titles like <strong>BGMI</strong>, <strong>Free Fire</strong>, and more. Whether you are a seasoned professional 
-                or a passionate enthusiast, our tournaments offer an opportunity to showcase your skills, 
-                compete for glory, and connect with a vibrant gaming community.
-            </p>
-            <p style="margin-top: 10px; font-size: 1.1em; line-height: 1.6; text-align: justify;">
-                Join us as we continue to build and celebrate India's growing <strong>eSports legacy</strong>. Unleash the 
-                champion within you and be part of an exciting journey where gaming meets greatness. 
-                Together, let’s redefine the world of competitive gaming in India!
-            </p>
+        
+        <section id="gift" class="gift" style="text-align: center; padding: 40px;">
+            <h2>Gifts for You</h2>
+            <div class="gift-buttons">
+                <a href="comingsoon.html">
+                    <button class="gift-btn" style="background-image: url('assets/images/gift.jpg');"></button>
+                </a>
+                <a href="comingsoon.html">
+                    <button class="gift-btn" style="background-image: url('assets/images/gifts.jpg');"></button>
+                </a>
+                <a href="comingsoon.html">
+                    <button class="gift-btn" style="background-image: url('assets/images/gift.jpg');"></button>
+                </a>
+                <a href="comingsoon.html">
+                    <button class="gift-btn" style="background-image: url('assets/images/gifts.jpg');"></button>
+                </a>
+                <!-- New buttons -->
+                <a href="comingsoon.html">
+                    <button class="gift-btn" style="background-image: url('assets/images/gift.jpg');"></button>
+                </a>
+                <a href="comingsoon.html">
+                    <button class="gift-btn" style="background-image: url('assets/images/gifts.jpg');"></button>
+                </a>
+            </div>
         </section>
-                
-        <section id="tournaments" class="tournaments">
-            <h2>Rules</h2>
-            <ul>
-                    <li> Gameplay Recording: All participants are required to record their gameplay throughout the tournament. Failure to provide footage may result in disqualification.
+        
+        <h2>Combo Offers</h2>
+<section id="combo-offers" class="combo-container">
+    <!-- Men Section -->
+<section id="men" class="about combo-item">
+    <h2>Men</h2>
+    <p>
+        Explore the latest men's fashion trends and styles
+        <br>
+        <button class="cta-button">Click Here</button>
+    </p>
+    <div class="image-container">
+        <img src="assets/images/t.jpg" alt="Men's Fashion 1">
+        <img src="assets/images/tshirt.jpg" alt="Men's Fashion 2">
+        <img src="assets/images/tshirt2.jpg" alt="Men's Fashion 3">
+        <img src="assets/images/tshirt5.jpg" alt="Men's Fashion 4">
+        <img src="assets/images/women.png" alt="Men's Fashion 5">
+        <img src="assets/images/women1.jpg" alt="Men's Fashion 6">
+        <img src="assets/images/EIC.jpg" alt="Men's Fashion 7">
+    </div>
+</section>
 
-                    <li> Fair Play: No use of cheats, hacks, or any third-party software that gives unfair advantages. Participants caught violating this rule will be permanently banned from the website and all future tournaments.
-                    
-                    <li> Behavior: Respectful and sportsmanlike behavior is expected at all times. Abusive language, trolling, or harassment will not be tolerated. Any violation may result in disqualification or a ban.
-                    
-                    <li> Team Composition: Ensure your team has the required number of players as per the tournament format. Substitutes are not allowed after the tournament has started unless otherwise specified.
-                    
-                    <li> Match Results: All match results must be submitted on time as instructed by the tournament organizers. Any discrepancies will be reviewed, and a decision will be made accordingly.
-                    
-                    <li> Server Selection: Players must join the designated servers provided by the organizers. No server hopping is allowed unless explicitly stated.
-                    
-                    <li> Equipment and Internet: Players are responsible for their equipment, including a stable internet connection. Lag or connectivity issues are not grounds for a re-match unless both teams agree.
-                    
-                    <li> Cheating Reports: If you believe another player is cheating or violating the rules, report it to the admins with relevant evidence (gameplay recording, screenshots, etc.). Reports without evidence may not be considered.
-                    
-                    <li> Eligibility: Participants must be 13 years or older to compete in our tournaments. Players must adhere to all local gaming laws.
-                    
-                    <li> Prize Distribution: Prizes will be awarded as per the tournament rules. No prize transfers will be allowed.</li>
-            </ul>
-        </section>
-        <section id="contact" class="contact">
-            <h2>Contact Us</h2>
-            <p>Email: esportsindiacup@gmail.com</p>
-        </section>
-    </main>
-    <footer class="footer">
-        <p>&copy; 2024 Esports India Cup. All rights reserved.</p>
-    </footer>
+<!-- Women Section -->
+<section id="women" class="about combo-item">
+    <h2>Women</h2>
+    <p>
+        Discover the latest women's fashion trends and styles
+        <br>
+        <button class="cta-button">Click Here</button>
+    </p>
+    <div class="image-container">
+        <img src="assets/images/t.jpg" alt="Men's Fashion 1">
+        <img src="assets/images/tshirt.jpg" alt="Men's Fashion 2">
+        <img src="assets/images/tshirt2.jpg" alt="Men's Fashion 3">
+        <img src="assets/images/tshirt5.jpg" alt="Men's Fashion 4">
+        <img src="assets/images/women.png" alt="Men's Fashion 5">
+        <img src="assets/images/women1.jpg" alt="Men's Fashion 6">
+        <img src="assets/images/EIC.jpg" alt="Men's Fashion 7">
+    </div>
+</section>
+
+<!-- Buy1 + Get1 Section -->
+<section id="buy1get1" class="about combo-item">
+    <h2>Buy1 + Get1</h2>
+    <p>
+        Get one item free when you purchase one item from selected categories.
+        <br>
+        <button class="cta-button">Shop Now</button>
+    </p>
+    <div class="image-container">
+        <img src="assets/images/t.jpg" alt="Men's Fashion 1">
+        <img src="assets/images/tshirt.jpg" alt="Men's Fashion 2">
+        <img src="assets/images/tshirt2.jpg" alt="Men's Fashion 3">
+        <img src="assets/images/tshirt5.jpg" alt="Men's Fashion 4">
+        <img src="assets/images/women.png" alt="Men's Fashion 5">
+        <img src="assets/images/women1.jpg" alt="Men's Fashion 6">
+        <img src="assets/images/EIC.jpg" alt="Men's Fashion 7">
+    </div>
+</section>
+
+<!-- Buy2 + Get1 Section -->
+<section id="buy2get1" class="about combo-item">
+    <h2>Buy2 + Get1</h2>
+    <p>
+        Purchase two items and get one item free from selected categories.
+        <br>
+        <button class="cta-button">Shop Now</button>
+    </p>
+    <div class="image-container">
+        <img src="assets/images/t.jpg" alt="Men's Fashion 1">
+        <img src="assets/images/tshirt.jpg" alt="Men's Fashion 2">
+        <img src="assets/images/tshirt2.jpg" alt="Men's Fashion 3">
+        <img src="assets/images/tshirt5.jpg" alt="Men's Fashion 4">
+        <img src="assets/images/women.png" alt="Men's Fashion 5">
+        <img src="assets/images/women1.jpg" alt="Men's Fashion 6">
+        <img src="assets/images/EIC.jpg" alt="Men's Fashion 7">
+    </div>
+</section>
+
+<!-- Buy2 + Get2 Section -->
+<section id="buy2get2" class="about combo-item">
+    <h2>Buy2 + Get2</h2>
+    <p>
+        Purchase two items and get two items free from selected categories.
+        <br>
+        <button class="cta-button">Shop Now</button>
+    </p>
+    <div class="image-container">
+        <img src="assets/images/t.jpg" alt="Men's Fashion 1">
+        <img src="assets/images/tshirt.jpg" alt="Men's Fashion 2">
+        <img src="assets/images/tshirt2.jpg" alt="Men's Fashion 3">
+        <img src="assets/images/tshirt5.jpg" alt="Men's Fashion 4">
+        <img src="assets/images/women.png" alt="Men's Fashion 5">
+        <img src="assets/images/women1.jpg" alt="Men's Fashion 6">
+        <img src="assets/images/EIC.jpg" alt="Men's Fashion 7">
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <h1 class="main-title">Lokalitha Fashions</h1> <!-- Big Title -->
+    <div class="footer-container">
+        <div class="footer-section">
+            <button class="footer-button" onclick="toggleDetails('payment')">Payment Policy</button>
+            <div class="details" id="payment">Payment details go here.</div>
+        </div>
+        <div class="footer-section">
+            <button class="footer-button" onclick="toggleDetails('privacy')">Privacy Policy</button>
+            <div class="details" id="privacy">Privacy details go here.</div>
+        </div>
+        <div class="footer-section">
+            <button class="footer-button" onclick="toggleDetails('shipping')">Shipping Details</button>
+            <div class="details" id="shipping">Shipping details go here.</div>
+        </div>
+        <div class="footer-section">
+            <button class="footer-button" onclick="toggleDetails('about')">About Us</button>
+            <div class="details" id="about">About us details go here.</div>
+        </div>
+        <div class="footer-section">
+            <button class="footer-button" onclick="toggleDetails('cookie')">Cookie Policy</button>
+            <div class="details" id="cookie">Cookie policy details go here.</div>
+        </div>
+        <div class="footer-section">
+            <button class="footer-button" onclick="toggleDetails('terms')">Terms and Conditions</button>
+            <div class="details" id="terms">Terms and conditions go here.</div>
+        </div>
+        <div class="footer-section">
+            <button class="footer-button" onclick="toggleDetails('refund')">Refund, Return, and Cancellation Policy</button>
+            <div class="details" id="refund">Refund, return, and cancellation policy details go here.</div>
+        </div>
+    </div>
+    <p>&copy; Lokalitha Fashions. All rights reserved.</p>
+</footer>
+<script>
+    // Toggle Navigation Links
+    function toggleNav() {
+        const navLinks = document.querySelector('.nav-links ul');
+        navLinks.style.display = (navLinks.style.display === 'none' || navLinks.style.display === '') ? 'block' : 'none';
+    }
+
+    // Toggle Search Bar
+    function toggleSearch() {
+        const searchBar = document.querySelector('.search-bar');
+        searchBar.classList.toggle('active');
+    }
+
+    // Toggle visibility of details on footer button click
+    function toggleDetails(section) {
+        const details = document.getElementById(section);
+        
+        // If details are currently hidden, show them
+        if (details.style.display === "none" || details.style.display === "") {
+            details.style.display = "block";
+        } else {
+            details.style.display = "none"; // Hide the details if already shown
+        }
+    }
+    window.addEventListener('scroll', function() {
+    const sections = document.querySelectorAll('section');
+    let scrollPosition = window.scrollY;
+
+    sections.forEach(section => {
+        const sectionOffsetTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+
+        // Check if the section is in the viewport
+        if (scrollPosition >= sectionOffsetTop && scrollPosition < sectionOffsetTop + sectionHeight) {
+            document.body.style.backgroundImage = `url('${getBackgroundImageForSection(section.id)}')`;
+        }
+    });
+});
+</script>
+
 </body>
 </html>
