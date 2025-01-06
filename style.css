@@ -1,9 +1,19 @@
-body {
-    font-family: Arial, sans-serif;
+/* Apply background image to the entire website */
+html, body {
+    height: 100%; /* Ensure full height for both html and body */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    background-color: #121212; /* Dark background for contrast */
+    background-image: url('assets/images/index.jpg'); /* Path to your background image */
+    background-size: cover; /* Make sure the image covers the whole page */
+    background-position: center center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    background-attachment: fixed; /* Keep background fixed while scrolling */
+    color: white;
+}
+
+/* Ensure the body and html elements cover the full height of the viewport */
+html, body {
+    height: 100%;
 }
 
 /* Header */
@@ -12,10 +22,13 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #333333; /* Slightly lighter for contrast */
-    color: #fff;
+    background-size: cover; /* Ensure the image covers the header */
+    background-position: center center; /* Center the image within the header */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    color: white; /* Set the text color to white */
     position: relative;
     z-index: 100;
+    width: 100%; /* Ensure header takes full width */
 }
 
 /* Logo */
@@ -54,7 +67,7 @@ body {
 }
 
 .nav-links a:hover {
-    background-color: #f3392c; /* Hover effect with accent color */
+    background-color: #ffffff; /* Hover effect with accent color */
     transform: scale(0.5);
 }
 
@@ -69,7 +82,7 @@ body {
 
 .menu-toggle:hover {
     transform: scale(1.2);
-    color: #e74c3c;
+    color: #ffffff;
 }
 
 /* Responsive Styles */
@@ -78,17 +91,21 @@ body {
         display: block; /* Show hamburger icon */
     }
 
-    .nav-links {
-        display: none; /* Initially hidden */
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        background-color: #333;
-        border-radius: 5px;
-        padding: 20px;
-        flex-direction: column;
-        animation: slideInRight 0.5s ease-out;
-    }
+/* Navigation Links */
+.nav-links {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: transparent;
+    background-size: cover; /* Ensure the image covers the entire nav section */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    border-radius: 5px;
+    padding: 20px;
+    flex-direction: column;
+    animation: slideInRight 0.5s ease-out;
+}
 
     .nav-links a {
         font-size: 18px;
@@ -119,7 +136,7 @@ body {
         transform: translateX(0);
     }
 }
-/* Popular Games Section */
+/* Our Best Offers */
 .games h2 {
     font-size: 2.5em; /* Adjust font size */
     text-align: center; /* Center the text */
@@ -129,12 +146,15 @@ body {
 
 /* Hero Section */
 .hero {
-    background-color: black;
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
     color: white;
     text-align: center;
     padding: 50px 20px;
     animation: fadeInUp 1s ease-out;
 }
+
 
 .hero h1 {
     font-size: 3em;
@@ -148,141 +168,618 @@ body {
 }
 
 /* Game Buttons Section */
-.game-buttons {
-    display: flex;  
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    animation: fadeInUp 2s ease-out;
-}
-
 .game-btn {
-    width: 150px;
-    height: 200px;
+    width: 200px;  /* Adjust button size for smaller screens */
+    height: 200px; /* Adjust button size for smaller screens */
     background-size: cover;
     background-position: center;
     border: none;
-    border-radius: 20px;
+    border-radius: 50%;
     cursor: pointer;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    will-change: transform;
 }
 
 .game-btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.2); /* Slightly enlarge on hover */
     box-shadow: 0px 8px 12px rgba(255, 2, 2, 0.3);
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* About Section */
-.about {
-    padding: 30px;
-    text-align: left;
-    background-color: #15181a; /* Change background to dark blue */
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    color: #ecf0f1; /* Light text color for contrast */
-    margin-bottom: 30px;
-    animation: fadeInUp 1s ease-out;
-}
-
-.about h2 {
-    font-size: 2.5em;
-    color: #ffffff; /* Red for heading */
-    margin-bottom: 20px;
-}
-
-.about p {
-    font-size: 1.1em;
-    line-height: 1.8;
-    color: #ccc; /* Light color for paragraph */
-}
-
-/* Rules Section */
-.tournaments {
-    padding: 30px;
-    text-align: center;
-    background-color: #1a1a1a; /* Dark background for rules */
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    color: #ecf0f1; /* Light text for readability */
-    margin-bottom: 30px;
-    animation: fadeInUp 1s ease-out;
+.game-buttons {
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Center the heading */
+    justify-content: center;
+    gap: 20px; /* Adjust spacing between buttons */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    padding: 20px;
+    animation: changePosition 10s infinite;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
 }
 
-/* Rules heading */
-.tournaments h2 {
-    font-size: 2.5em;
-    color: #ffffff; /* Red for heading */
-    margin-bottom: 20px;
-    text-align: center; /* Ensures the heading is centered */
+.game-buttons a {
+    text-decoration: none; /* Remove underline */
 }
 
-/* Rules content (text on the left side) */
-.tournaments ul {
-    font-size: 1.1em;
-    line-height: 1.8;
-    color: #ccc;
-    text-align: left; /* Align the list items to the left */
-    width: 100%; /* Ensure the list takes full width */
-    max-width: 900px; /* Limit the width to prevent stretching */
-    margin: 0 auto; /* Center the content */
-    padding-left: 20px; /* Add some padding on the left for better readability */
-}
-
-/* Optional: Customize the individual list items for better spacing */
-.tournaments li {
-    margin-bottom: 10px; /* Add space between each item */
-}
-
-
-/* Contact Section */
-.contact {
-    padding: 30px;
-    text-align: center;
-    background-color: #232425; /* Slightly lighter dark color */
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    color: #ecf0f1; /* Light text color */
-    animation: fadeInUp 1s ease-out;
-}
-
-.contact h2 {
-    font-size: 2.5em;
-    color: #faf8f8; /* Red for heading */
-    margin-bottom: 20px;
-}
-
-.contact p {
-    font-size: 1.1em;
-    line-height: 1.8;
-    color: #ccc;
-}
-
-/* Footer */
-.footer {
-    background-color: #111;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    animation: fadeInUp 2s ease-out;
-}
-
-.footer p {
-    margin: 0;
-}
-
-/* Animations */
-@keyframes fadeInUp {
+@keyframes changePosition {
     0% {
-        opacity: 0;
-        transform: translateY(20px);
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(30px);  /* Reduce movement for smaller screens */
+    }
+    50% {
+        transform: translateX(-30px); /* Reduce movement for smaller screens */
+    }
+    75% {
+        transform: translateX(0);
     }
     100% {
-        opacity: 1;
-        transform: translateY(0);
+        transform: translateX(30px);  /* Reduce movement for smaller screens */
     }
+}
+
+/* On Mobile */
+@media (max-width: 768px) {
+    .game-btn {
+        width: 200px;  /* Keep button size the same as on desktop */
+        height: 200px; /* Keep button size the same as on desktop */
+    }
+
+    .game-buttons {
+        justify-content: flex-start; /* Align buttons to the start of the container */
+        gap: 20px; /* Adjust space between buttons */
+        flex-wrap: nowrap; /* Prevent buttons from wrapping to the next line */
+        overflow-x: auto; /* Allow horizontal scrolling */
+    }
+}
+/* Footer Styles */
+.footer {
+    background-image: url('assets/images/women.png'); /* Set the background image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.main-title {
+    font-size: 3rem; /* Large size for main title */
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-section {
+    width: 220px;
+    text-align: left;
+    padding: 10px;
+}
+
+.footer-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem; /* Smaller size for button text */
+    color: #fff;
+    background-color: #0a0a0a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-button:hover {
+    background-color: #ff6347;
+    transform: scale(1.05);
+}
+
+.details {
+    display: none; /* Hide details by default */
+    font-size: 0.8rem;
+    margin-top: 10px;
+    color: #ddd;
+}
+
+/* Responsive Footer for Small Screens */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.circle-container {
+    position: relative;
+    width: 500px; /* Increased size of the container */
+    height: 500px; /* Increased size of the container */
+    margin: 0 auto; /* Center the circle container */
+    animation: rotateImages 150s infinite linear, moveImages 5s infinite; /* Rotate all images and move every 5 seconds */
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%; /* Make images round */
+    width: 100px; /* Initial image size */
+    height: 100px; /* Initial image size */
+    object-fit: cover; /* Maintain image aspect ratio */
+    transition: transform 0.3s ease, z-index 0.3s ease; /* Transition for transform and z-index */
+    opacity: 0.9; /* Slight opacity for initial state */
+}
+
+/* Center the image when hovered */
+.circle:hover {
+    transform: scale(3) translate(0, 0); /* Enlarge the image and center it */
+    z-index: 10; /* Bring the hovered image to the front */
+    opacity: 1; /* Remove opacity on hover */
+}
+
+/* Position each image around the circle (initial positions) */
+.img1 {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.img2 {
+    top: 15%;
+    right: 15%;
+    transform: translate(50%, -50%);
+}
+
+.img3 {
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+}
+
+.img4 {
+    bottom: 15%;
+    right: 15%;
+    transform: translate(50%, 50%);
+}
+
+.img5 {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.img6 {
+    bottom: 15%;
+    left: 15%;
+    transform: translate(-50%, 50%);
+}
+
+.img7 {
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+}
+
+.img8 {
+    top: 15%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+}
+
+/* Animation to rotate the images circularly */
+@keyframes rotateImages {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animation to move the images to different positions every 5 seconds */
+@keyframes moveImages {
+    0% {
+        /* Initial positions */
+        .img1 { top: 0; left: 50%; transform: translate(-50%, 0); }
+        .img2 { top: 15%; right: 15%; transform: translate(50%, -50%); }
+        .img3 { top: 50%; right: 0; transform: translate(0, -50%); }
+        .img4 { bottom: 15%; right: 15%; transform: translate(50%, 50%); }
+        .img5 { bottom: 0; left: 50%; transform: translate(-50%, 0); }
+        .img6 { bottom: 15%; left: 15%; transform: translate(-50%, 50%); }
+        .img7 { top: 50%; left: 0; transform: translate(0, -50%); }
+        .img8 { top: 15%; left: 15%; transform: translate(-50%, -50%); }
+    }
+
+    25% {
+        /* 25% of the time (1.25 seconds) */
+        .img1 { top: 50%; left: 0; transform: translate(0, -50%); }
+        .img2 { top: 0; left: 50%; transform: translate(-50%, 0); }
+        .img3 { bottom: 15%; left: 15%; transform: translate(-50%, 50%); }
+        .img4 { bottom: 15%; right: 15%; transform: translate(50%, 50%); }
+        .img5 { top: 15%; right: 15%; transform: translate(50%, -50%); }
+        .img6 { top: 50%; right: 0; transform: translate(0, -50%); }
+        .img7 { bottom: 0; left: 50%; transform: translate(-50%, 0); }
+        .img8 { top: 15%; left: 15%; transform: translate(-50%, -50%); }
+    }
+
+    50% {
+        /* 50% of the time (2.5 seconds) */
+        .img1 { bottom: 15%; right: 15%; transform: translate(50%, 50%); }
+        .img2 { top: 50%; right: 0; transform: translate(0, -50%); }
+        .img3 { top: 0; left: 50%; transform: translate(-50%, 0); }
+        .img4 { top: 15%; left: 15%; transform: translate(-50%, -50%); }
+        .img5 { bottom: 0; left: 50%; transform: translate(-50%, 0); }
+        .img6 { top: 50%; left: 0; transform: translate(0, -50%); }
+        .img7 { top: 15%; right: 15%; transform: translate(50%, -50%); }
+        .img8 { bottom: 15%; left: 15%; transform: translate(-50%, 50%); }
+    }
+
+    75% {
+        /* 75% of the time (3.75 seconds) */
+        .img1 { top: 15%; left: 15%; transform: translate(-50%, -50%); }
+        .img2 { top: 50%; left: 0; transform: translate(0, -50%); }
+        .img3 { bottom: 15%; right: 15%; transform: translate(50%, 50%); }
+        .img4 { top: 0; left: 50%; transform: translate(-50%, 0); }
+        .img5 { bottom: 0; left: 50%; transform: translate(-50%, 0); }
+        .img6 { top: 15%; right: 15%; transform: translate(50%, -50%); }
+        .img7 { top: 50%; left: 0; transform: translate(0, -50%); }
+        .img8 { bottom: 15%; left: 15%; transform: translate(-50%, 50%); }
+    }
+
+    100% {
+        /* Final state (5 seconds) */
+        .img1 { top: 0; left: 50%; transform: translate(-50%, 0); }
+        .img2 { top: 15%; right: 15%; transform: translate(50%, -50%); }
+        .img3 { top: 50%; right: 0; transform: translate(0, -50%); }
+        .img4 { bottom: 15%; right: 15%; transform: translate(50%, 50%); }
+        .img5 { bottom: 0; left: 50%; transform: translate(-50%, 0); }
+        .img6 { bottom: 15%; left: 15%; transform: translate(-50%, 50%); }
+        .img7 { top: 50%; left: 0; transform: translate(0, -50%); }
+        .img8 { top: 15%; left: 15%; transform: translate(-50%, -50%); }
+    }
+}
+/* flower Buttons Section */
+.flower-btn {
+    width: 220px;  /* Increase button size */
+    height: 220px; /* Increase button size */
+    background-size: cover;  /* Ensure the image covers the button */
+    background-position: center; /* Keep the image centered */
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    will-change: transform;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+.flower-btn:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+    box-shadow: 0px 8px 12px rgba(255, 2, 2, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.flower-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust spacing between buttons */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    padding: 20px;
+    animation: changePosition 10s infinite;
+    flex-wrap: nowrap; /* Ensure buttons stay in one line */
+}
+
+.flower-buttons a {
+    text-decoration: none; /* Remove underline */
+}
+
+@keyframes changePosition {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(30px);  /* Reduce movement for smaller screens */
+    }
+    50% {
+        transform: translateX(-30px); /* Reduce movement for smaller screens */
+    }
+    75% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(30px);  /* Reduce movement for smaller screens */
+    }
+}
+
+/* On Mobile */
+@media (max-width: 768px) {
+    .flower-btn {
+        width: 220px;  /* Keep button size larger */
+        height: 220px; /* Keep button size larger */
+    }
+
+    .flower-buttons {
+        justify-content: flex-start; /* Align buttons to the start of the container */
+        gap: 20px; /* Adjust space between buttons */
+        flex-wrap: nowrap; /* Prevent buttons from wrapping to the next line */
+        overflow-x: auto; /* Allow horizontal scrolling */
+    }
+}
+/* Game Buttons Section */
+.category-btn {
+    width: 200px;  /* Adjust button size for smaller screens */
+    height: 200px; /* Adjust button size for smaller screens */
+    background-size: cover;
+    background-position: center;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    will-change: transform;
+}
+
+.category-btn:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+    box-shadow: 0px 8px 12px rgba(255, 2, 2, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust spacing between buttons */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    padding: 20px;
+    animation: changePosition 10s infinite;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+.category-buttons a {
+    text-decoration: none; /* Remove underline */
+}
+
+@keyframes changePosition {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(30px);  /* Reduce movement for smaller screens */
+    }
+    50% {
+        transform: translateX(-30px); /* Reduce movement for smaller screens */
+    }
+    75% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(30px);  /* Reduce movement for smaller screens */
+    }
+}
+
+/* On Mobile */
+@media (max-width: 768px) {
+    .category-btn {
+        width: 200px;  /* Keep button size the same as on desktop */
+        height: 200px; /* Keep button size the same as on desktop */
+    }
+
+    .category-buttons {
+        justify-content: flex-start; /* Align buttons to the start of the container */
+        gap: 20px; /* Adjust space between buttons */
+        flex-wrap: nowrap; /* Prevent buttons from wrapping to the next line */
+        overflow-x: auto; /* Allow horizontal scrolling */
+    }
+}
+/* Gift Buttons Section */
+.gift-btn {
+    width: 200px;  /* Button width */
+    height: 200px; /* Button height */
+    background-size: cover;
+    background-position: center;
+    border: none;
+    border-radius: 15px; /* Slightly rounded corners */
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    will-change: transform;
+    animation: bounce 5s infinite; /* Animation applied to buttons */
+}
+
+.gift-btn:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+    box-shadow: 0px 8px 12px rgba(255, 2, 2, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.gift-buttons {
+    display: flex; /* Flex layout for inline arrangement */
+    justify-content: center; /* Center the buttons */
+    gap: 20px; /* Spacing between buttons */
+    padding: 20px;
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    white-space: nowrap; /* Prevent wrapping to a new line */
+}
+
+.gift-buttons a {
+    text-decoration: none; /* Remove underline */
+}
+
+/* Animation Keyframes */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0); /* Start at original position */
+    }
+    50% {
+        transform: translateY(-30px); /* Move up slightly */
+    }
+}
+
+/* On Mobile */
+@media (max-width: 768px) {
+    .gift-btn {
+        width: 150px; /* Smaller button size for mobile */
+        height: 150px;
+        animation: bounce 8s infinite; /* Keep animation on mobile */
+    }
+
+    .gift-buttons {
+        justify-content: flex-start; /* Align buttons to the start on mobile */
+    }
+}
+/* General Styling */
+h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #fdf9f9;
+}
+
+.combo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 0;
+    width: 100%;
+    height: auto; /* Adjust height for content */
+    overflow: visible; /* Allow content to overflow if needed */
+}
+
+.combo-item {
+    text-align: center;
+    padding: 40px;
+    width: 80%;
+    max-width: 800px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border: 4px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.combo-item h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.combo-item p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #0a0a0a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #ff6347;
+    transform: scale(1.1);
+}
+
+/* Image Container */
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+.image-container img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 8px 12px rgba(255, 2, 2, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Animation for Image Movement */
+@keyframes changePosition {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(30px); }
+    50% { transform: translateX(-30px); }
+    75% { transform: translateX(0); }
+    100% { transform: translateX(30px); }
+}
+
+/* On Mobile */
+@media (max-width: 768px) {
+    .image-container {
+        justify-content: flex-start;
+        gap: 20px;
+        flex-wrap: nowrap;
+    }
+}
+
+/* Hover Effects */
+.combo-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Section Backgrounds */
+body {
+    background-image: url('assets/images/index.jpg'); /* Default background image */
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
+}
+
+#men, #women, #buy1get1, #buy2get1, #buy2get2, #hero, #games {
+    min-height: 100vh;
+    background-size: cover; /* Ensure backgrounds cover the entire section */
+    background-position: center;
+}
+
+#men {
+    background-image: url('assets/images/men.jpg');
+}
+
+#women {
+    background-image: url('assets/images/women.png');
+}
+
+#buy1get1 {
+    background-image: url('assets/images/woman3.jpg');
+}
+
+#buy2get1 {
+    background-image: url('assets/images/t.jpg');
+}
+
+#buy2get2 {
+    background-image: url('assets/images/tshirt.jpg');
 }
